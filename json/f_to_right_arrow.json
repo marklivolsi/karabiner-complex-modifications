@@ -1,0 +1,53 @@
+{
+"title": "; + f to right arrow",
+  "rules": [
+    {
+      "description": "; + f to right arrow",
+      "manipulators": [
+        {
+            "from": {
+                "key_code": "semicolon"
+            },
+            "to": [
+                {
+                    "set_variable": {
+                        "name": "semicolon_modifier",
+                        "value": 1
+                    }
+                }
+            ],
+            "to_after_key_up": [
+                {
+                    "set_variable": {
+                        "name": "semicolon_modifier",
+                        "value": 0
+                    }
+                }
+            ],
+            "to_if_alone": [
+              {
+                "key_code": "semicolon"
+              }
+            ],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "semicolon_modifier",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "f"
+            },
+            "to": {
+                "key_code": "right_arrow"
+              },
+            "type": "basic"
+        }
+      ]
+    }
+  ]
+}
